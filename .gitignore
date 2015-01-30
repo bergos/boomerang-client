@@ -1,0 +1,6 @@
+.idea
+dist/js/browser-client.js
+dist/js/rdf.js
+dist/js/rdf-ext.js
+dist/js/task-worker-bg.js
+node_modules

@@ -1,0 +1,37 @@
+{
+  "name": "boomerang-client",
+  "version": "0.0.1",
+  "description": "BoomerangJS client",
+  "keywords": [
+    "BoomerangJS",
+    "Client",
+    "Computing"
+  ],
+  "author": {
+    "name": "Thomas Bergwinkl",
+    "email": "bergi@axolotlfarm.org"
+  },
+  "license": "MIT",
+  "homepage": "http://www.boomerangjs.org",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zazukoians/boomerang-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zazukoians/boomerang-client/issues"
+  },
+  "scripts": {
+    "install": "node build.js"
+  },
+  "main": "lib/client.js",
+  "dependencies": {
+    "es6-promise": "2.*",
+    "jsonld": "0.3.*",
+    "rdf-ext": "0.1.*",
+    "rdf-interfaces": "0.1.*"
+  },
+  "devDependencies": {
+    "mocha": "1.*"
+  },
+  "readmeFilename": "README.md"
+}
