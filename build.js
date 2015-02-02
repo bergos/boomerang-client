@@ -1,6 +1,23 @@
 var
-  exec = require('child_process').exec,
+  nodeExec = require('child_process').exec,
   fs = require('fs');
+
+
+var exec = function (command) {
+  nodeExec(command, function (error, stdout, stderr) {
+    if (error != null) {
+      console.error('error running command: ' + error.stack);
+      process.exit(error.code);
+    }
+
+    if (stderr.length !== 0) {
+      console.error(stderr.toString());
+      process.exit(1);
+    }
+
+    console.log(stdout.toString());
+  });
+};
 
 
 if (fs.existsSync('node_modules/rdf-interfaces')) {
