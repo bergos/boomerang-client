@@ -19,17 +19,20 @@ var exec = function (command) {
   });
 };
 
-
-if (fs.existsSync('node_modules/rdf-interfaces')) {
-  exec('ln -s node_modules/rdf-interfaces/rdfi.js dist/js/rdf.js');
-} else if (fs.existsSync('../rdf-interfaces')) {
-  exec('ln -s ../../../rdf-interfaces/rdfi.js dist/js/rdf.js');
+if (! fs.existsSync('dist/js/rdf.js')) {
+  if (fs.existsSync('node_modules/rdf-interfaces')) {
+    exec('ln -s node_modules/rdf-interfaces/rdfi.js dist/js/rdf.js');
+  } else if (fs.existsSync('../rdf-interfaces')) {
+    exec('ln -s ../../../rdf-interfaces/rdfi.js dist/js/rdf.js');
+  }
 }
 
-if (fs.existsSync('node_modules/rdf-ext')) {
-  exec('ln -s node_modules/rdf-ext/dist/rdf-ext.js dist/js/');
-} else if (fs.existsSync('../rdf-ext')) {
-  exec('ln -s ../../../rdf-ext/dist/rdf-ext.js dist/js/');
+if (! fs.existsSync('dist/js/rdf-ext.js')) {
+  if (fs.existsSync('node_modules/rdf-ext')) {
+    exec('ln -s node_modules/rdf-ext/dist/rdf-ext.js dist/js/');
+  } else if (fs.existsSync('../rdf-ext')) {
+    exec('ln -s ../../../rdf-ext/dist/rdf-ext.js dist/js/');
+  }
 }
 
 exec('cp lib/utils/request.js dist/js/');
