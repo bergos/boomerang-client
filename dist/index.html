@@ -6,10 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>BoomerangJS</title>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/browser-client.js"></script>
-
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -18,46 +14,33 @@
 	<![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top">
-	<div class="container">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="BoomerangJS">BoomerangJS</a>
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://www.boomerangjs.org">BoomerangJS Client</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<div class="navbar-right">
+					<button id="refresh" title="Refresh" type="button" class="btn btn-default navbar-btn">
+						<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
 		</div>
-		<div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tasks <span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Run</a></li>
-						<li><a href="#">Pause</a></li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Logout</a></li>
-						<li><a href="#">Info</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</div>
-</nav>
+	</nav>
 
 	<div class="container">
-		<table class="table table-bordered">
-			<thead>
-				<tr>
-					<th>Task</th>
-					<th>Result</th>
-					<th>Status</th>
-				</tr>
-			</thead>
-			<tbody id="tasks">
-			</tbody>
-		</table>
+		<div id="task-list"></div>
 	</div>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/react.js"></script>
+	<script src="js/ui.js"></script>
+	<script src="js/browser-client.js"></script>
+
+	<script>
+		boomerang.client.start('http://localhost:8080/apps/pi/data/schedule');
+	</script>
 </body>
 </html>
